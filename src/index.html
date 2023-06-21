@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Screen Recorder App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="index.css">
+    <script defer src="render.js"></script>
+  </head>
+  <body>
+    <h1>⚡Electron Screen Recorder⚡</h1>
+ 
+    <!-- HTML code for the "Upload Video" button -->
+<!-- <button id="upload-btn">Upload Video</button> -->
+
+<video id="myVideo" width="640" height="360" controls></video>
+<div class="toggle-container">
+  <button id="toggleBtn" class="button is-primary is-small">Hide uploaded section</button>
+</div>
+
+<section class="recordingBtnSection">
+  <!-- <button id="saveNoteBtn" class="button is-text is-small">Save Note</button> -->
+  <hr>
+  <button id="videoSelectBtn" class="button is-text is-small">
+    Select Recording Screen
+  </button>
+  <hr>
+      <button id="startBtn" class="button is-primary is-small">Start Recording</button>
+      <button id="stopBtn" class="button is-warning is-small">Stop and Save Recording</button>
+      <textarea id="noteTextarea" placeholder="Add your notes here"></textarea>
+      <button id="shortcutBtn" class="is-small">Configure Keyboard Shortcuts</button>
+</section>
+<section class="uploadedFile hidden">
+  <section class="uploadVideoSection">
+    <label for="file">Choose video file to upload</label>
+    <input type="file" id="file-inputVideo">
+    <button id="addTimeBtn" class="button is-small">+3</button>
+  </section>
+
+   
+  <section class="uploadWebvttSection">
+    <label for="file">Choose WebVtt file to upload</label>
+    <input type="file" id="fileInputWebvtt">
+  </section>
+   
+  <section class="cueListSection">
+    <!-- Cue list div  -->
+    <div id="cueListDiv">
+    <h2>Filtered Cue List</h2>
+    <input type="text" id="searchBar" placeholder="Search for cues...">
+    </div>
+  </section>
+</section>
+<!-- Pop up page  -->
+<div id="configure-shortcut-popup" class="hidden">
+   <!-- content of the popup -->
+   <button id="close-popup-btn" class="is-small">x</button>
+   <div id="shortcutlistDiv" class="shortcutlist">
+    <h2 class="shortcutListTitle"></h2>
+   </div>
+  <button id="add-shortcut-btn" class="is-small">+</button>
+  <!-- Smaller pop up page for keyboard configuration -->
+  <div id="add-shortcut-popup" class="hidden">
+    <label for="shortcut-input">Keyboard Shortcut:</label>
+    <input type="text" id="shortcut-input">
+  
+    <label for="shortcut-meaning-input">What does it stand for:</label>
+    <input type="text" id="shortcut-meaning-input">
+  
+    <label for="shortcut-description-input">Shortcut Description:</label>
+    <input type="text" id="shortcut-description-input">
+    
+    <button id="save-shortcut-btn" class="is-small">Save</button>
+  </div>
+  
+</div>
+  </body>
+</html>
